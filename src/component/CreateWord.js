@@ -15,9 +15,9 @@ export default function CreateWord() {
       },
       body: JSON.stringify({
         //넣을 내용 입력
-        day: engRef.current.value,
+        day: dayRef.current.value,
         eng: korRef.current.value,
-        kor: dayRef.current.value,
+        kor: engRef.current.value,
         isDone: false, //로 고정
       }),
     }).then((res) => {

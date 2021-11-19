@@ -48,6 +48,20 @@
       "eng": "peach",
       "kor": "복숭아",
       "isDone": false
+    },
+    {
+      "day": "Seoyoon",
+      "eng": "서윤",
+      "kor": "3",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "day": "1",
+      "eng": "서윤",
+      "kor": "Seoyoon",
+      "isDone": false,
+      "id": 8
     }
   ]
 }
