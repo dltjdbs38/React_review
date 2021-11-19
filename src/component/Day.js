@@ -7,13 +7,14 @@ export default function Day() {
   //const {day} = useParams();
   const [words, setWords] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3001/words?day=${day}`) //그냥 words만 하면
+    fetch(`http://localhost:3001/words?day=${day}`) //그냥 words만 하면 전체 객체를 다 받아오지만 ?day={}를 하면 day키가 {}인 애들만 가져온다.
       .then((res) => {
         console.log(res);
         //res는 http응답이고 실제 json은 아니다 그래서 .json()
         return res.json();
       }) //다음 then은 이전 then의 return 값을 res로 받아온다..?
       .then((data) => {
+        console.log(data);
         setWords(data);
       });
   }, [day]); //의존성 배열에 day를 안 넣으면 day가 바뀌어도 새로운 정보를 받을 수 없다.
