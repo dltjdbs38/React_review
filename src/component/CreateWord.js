@@ -8,6 +8,23 @@ export default function CreateWord() {
     console.log(korRef.current.value);
     console.log(dayRef.current.value);
     //current를 이용하면 해당 요소에 접근할 수 있고, value는 input에 입력된 값을 얻을 수 있다.
+    fetch(`http://localhost:3001/words/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        //넣을 내용 입력
+        day: engRef.current.value,
+        eng: korRef.current.value,
+        kor: dayRef.current.value,
+        isDone: false, //로 고정
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        alert("생성이 완료되었습니다!");
+      }
+    });
   }
   const engRef = useRef(null);
   const korRef = useRef(null);
