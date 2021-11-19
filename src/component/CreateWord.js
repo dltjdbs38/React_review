@@ -1,7 +1,9 @@
 import useFetch from "../hooks/useFetch";
 import { useRef } from "react";
+import { useHistory } from "react-router";
 export default function CreateWord() {
   const days = useFetch("http://localhost:3001/days");
+  const history = useHistory();
   function onSubmit(e) {
     e.preventDefault(); //form태그의 기본 기능인 새로고침 방지.
     console.log(engRef.current.value);
@@ -23,6 +25,9 @@ export default function CreateWord() {
     }).then((res) => {
       if (res.ok) {
         alert("생성이 완료되었습니다!");
+        history.push(`/day/${dayRef.current.value}`);
+        //useHistory.push를 하면 해당 히스토리로 이동한다.
+        //a나 Link를 사용하지 않고 페이지 이동할 떄 사용.
       }
     });
   }
