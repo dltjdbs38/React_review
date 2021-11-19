@@ -7,7 +7,26 @@ export default function Word({ word }) {
     setIsShow(!isShow); // isShow가 true면 false로, false면 true로
   }
   function handleDone() {
-    setIsDone(!isDone);
+    console.log(word);
+    // setIsDone(!isDone);
+    // fetch PUT 으로 올라가있는 데이터 수정하기
+    // checkbox를 누르면 외운 단어는 isDone이 될 뿐더러
+    // 다른 페이지에 갔다가 와도 유지가 된다.
+    fetch(`http://localhost:3001/words/${word.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        //바꿀 내용 입력
+        ...word,
+        isDone: !isDone,
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        setIsDone(!isDone);
+      }
+    });
   }
   return (
     <tr className={isDone ? "off" : ""}>
