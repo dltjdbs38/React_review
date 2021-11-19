@@ -18,8 +18,8 @@ export default function CreateWord() {
       body: JSON.stringify({
         //넣을 내용 입력
         day: dayRef.current.value,
-        eng: korRef.current.value,
-        kor: engRef.current.value,
+        eng: engRef.current.value,
+        kor: korRef.current.value,
         isDone: false, //로 고정
       }),
     }).then((res) => {
