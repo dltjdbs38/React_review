@@ -1,11 +1,13 @@
 import dummy from "../db/data.json";
-import { useParams, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Word from "./Word";
 export default function Day() {
-  const { day } = useParams(); //useParams = url값을 받음. useParams 값은 객체가 됨. {day : '2' } string으로 2를 받음.
+  const day = useParams().day; //useParams = url값을 받음. useParams 값은 객체가 됨. {day : '2' } string으로 2를 받음.
+  //const {day} = useParams();
   const [words, setWords] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/words") //그냥 words만 하면
+    fetch(`http://localhost:3001/words?day=${day}`) //그냥 words만 하면
       .then((res) => {
         console.log(res);
         //res는 http응답이고 실제 json은 아니다 그래서 .json()
