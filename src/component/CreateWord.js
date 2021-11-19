@@ -1,21 +1,37 @@
 import useFetch from "../hooks/useFetch";
+import { useRef } from "react";
 export default function CreateWord() {
   const days = useFetch("http://localhost:3001/days");
+  function onSubmit(e) {
+    e.preventDefault(); //form태그의 기본 기능인 새로고침 방지.
+    console.log(engRef.current.value);
+    console.log(korRef.current.value);
+    console.log(dayRef.current.value);
+    //current를 이용하면 해당 요소에 접근할 수 있고, value는 input에 입력된 값을 얻을 수 있다.
+  }
+  const engRef = useRef(null);
+  const korRef = useRef(null);
+  const dayRef = useRef(null);
+  //useRef는 DOM에 접근할 수 있게 해준다.
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div className="input_area">
         <label>Eng</label>
-        <input type="text" placeholder="computer"></input>
+        <input type="text" placeholder="computer" ref={engRef}></input>
       </div>
       <div className="input_area">
-        <label>Eng</label>
-        <input type="text" placeholder="computer"></input>
+        <label>Kor</label>
+        <input type="text" placeholder="컴퓨터" ref={korRef}></input>
       </div>
       <div className="input_area">
         <label>Day</label>
-        <select>
+        <select ref={dayRef}>
           {days.map((day) => {
-            <option key={day.id} value={day.day}></option>; // day를 여기서 선택해서 해당 day에 단어를 create한다.
+            return (
+              <option key={day.id} value={day.day}>
+                {day.day}
+              </option>
+            ); // day를 여기서 선택해서 해당 day에 단어를 create한다.
           })}
         </select>
       </div>
