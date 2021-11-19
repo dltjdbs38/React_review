@@ -28,6 +28,13 @@ export default function Word({ word }) {
       }
     });
   }
+  function del() {
+    if (window.confirm("삭제 하시겠습니까?")) {
+      fetch(`http://localhost:3001/words/${word.id}`, {
+        method: "DELETE",
+      });
+    }
+  }
   return (
     <tr className={isDone ? "off" : ""}>
       <td>
@@ -37,7 +44,9 @@ export default function Word({ word }) {
       <td>{isShow && word.kor}</td>
       <td>
         <button onClick={handleShow}>{isShow ? "뜻 숨기기" : "뜻 보기"}</button>
-        <button className="btn_del">삭제</button>
+        <button className="btn_del" onClick={del}>
+          삭제
+        </button>
       </td>
     </tr>
   );
