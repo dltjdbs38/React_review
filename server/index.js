@@ -14,4 +14,6 @@ server.use(jsonServer.bodyParser);
 server.use(router);
 server.listen(port, () => {
   console.log("Hey, JSON Server is running!!");
+  console.log("Let's Go to http://localhost:3001/");
+  console.log("{^_^}/");
 });
