@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import dummy from "../db/data.json";
 import { useEffect, useState } from "react";
 
 export default function Home() {
