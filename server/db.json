@@ -1,0 +1,85 @@
+{
+  "days": [
+    {
+      "id": 1,
+      "day": 1
+    },
+    {
+      "id": 2,
+      "day": 2
+    },
+    {
+      "id": 3,
+      "day": 3
+    },
+    {
+      "day": 4,
+      "id": 4
+    }
+  ],
+  "words": [
+    {
+      "id": 2,
+      "day": 1,
+      "eng": "car",
+      "kor": "차",
+      "isDone": false
+    },
+    {
+      "id": 3,
+      "day": 2,
+      "eng": "school",
+      "kor": "학교",
+      "isDone": false
+    },
+    {
+      "id": 4,
+      "day": 2,
+      "eng": "pen",
+      "kor": "펜",
+      "isDone": false
+    },
+    {
+      "id": 5,
+      "day": 3,
+      "eng": "pencil",
+      "kor": "연필",
+      "isDone": false
+    },
+    {
+      "id": 6,
+      "day": 3,
+      "eng": "peach",
+      "kor": "복숭아",
+      "isDone": false
+    },
+    {
+      "day": "Seoyoon",
+      "eng": "서윤",
+      "kor": "3",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "day": "1",
+      "eng": "서윤",
+      "kor": "Seoyoon",
+      "isDone": false,
+      "id": 8
+    },
+    {
+      "day": "2",
+      "eng": "뱅뱅",
+      "kor": "BangBang",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "day": "1",
+      "eng": "새롬이",
+      "kor": "Saerom",
+      "isDone": false,
+      "id": 10
+    }
+  ]
+}
